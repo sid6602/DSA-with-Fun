@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col" style=" border: 2px solid black; margin-right: 1%; width:43%;">
+			<h1>Algorithm</h1>
+			<img src="img/bubble.jpg" alt="Flowers in Chania">
+		</div>
+		<div class="col" style=" border: 2px solid black; width:43%;">
+			<textarea rows="80" cols="80">
+				#include<iostream>
+				using namespace std;
+				int main ()
+				{
+				   int i, j,temp,pass=0;
+				   int a[10] = {10,2,0,14,43,25,18,1,5,45};
+				   cout <<"Input list ...\n";
+				   for(i = 0; i<10; i++) {
+				      cout <<a[i]<<"\t";
+				   }
+				cout<<endl;
+				for(i = 0; i<10; i++) {
+				   for(j = i+1; j<10; j++)
+				   {
+				      if(a[j] < a[i]) {
+				         temp = a[i];
+				         a[i] = a[j];
+				         a[j] = temp;
+				      }
+				   }
+				pass++;
+				}
+				cout <<"Sorted Element List ...\n";
+				for(i = 0; i<10; i++) {
+				   cout <<a[i]<<"\t";
+				}
+				cout<<"\nNumber of passes taken to sort the list:"<<pass<<endl;
+				return 0;
+				}
+			</textarea>
+		</div>
+	</div>
+
+</div>
+
+
+</body>
+</html>

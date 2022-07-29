@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col" style=" border: 2px solid black; margin-right: 1%; width:43%;">
+			<h1>Algorithm</h1>
+			<img src="img/quick.jpg" alt="Flowers in Chania" width="500" height="600">
+		</div>
+		<div class="col" style=" border: 2px solid black; width:43%;">
+			<textarea rows="80" cols="80">
+			#include<iostream>
+			using namespace std;
+
+			void swap(int arr[] , int pos1, int pos2){
+				int temp;
+				temp = arr[pos1];
+				arr[pos1] = arr[pos2];
+				arr[pos2] = temp;
+			}
+
+			int partition(int arr[], int low, int high, int pivot){
+				int i = low;
+				int j = low;
+				while( i <= high){
+					if(arr[i] > pivot){
+						i++;
+					}
+					else{
+						swap(arr,i,j);
+						i++;
+						j++;
+					}
+				}
+				return j-1;
+			}
+
+			void quickSort(int arr[], int low, int high){
+				if(low < high){
+				int pivot = arr[high];
+				int pos = partition(arr, low, high, pivot);
+				
+				quickSort(arr, low, pos-1);
+				quickSort(arr, pos+1, high);
+				}
+			}
+
+			int main()
+			{
+				int n ;
+				cout << " enter the size of array";
+				cin>>n;
+				int arr[n];
+				for( int i = 0 ; i < n; i++){
+					cin>> arr[i];
+				}
+				quickSort(arr, 0 , n-1);
+				cout<<"The sorted array is: ";
+				for( int i = 0 ; i < n; i++){
+					cout<< arr[i]<<"\t";
+				}
+				
+			}
+			</textarea>
+		</div>
+	</div>
+
+</div>
+
+
+</body>
+</html>
